@@ -21,9 +21,6 @@ class Dataset:
 def load_data() -> Dataset:
     #Load and preprocess the Fashion MNIST dataset.
 
-    if tf is None:
-        raise ImportError("TensorFlow is required to load the dataset.")
-
     (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.fashion_mnist.load_data()
 
     #Normalize pixel values
@@ -114,8 +111,6 @@ def hyperparameter_tuning(
 ) -> Tuple[Dict[str, int | float | None], Dict[str, Dict[str, float]]]:
     #Run a very small hyperparameter sweep and record the results.
 
-    if tf is None:
-        raise ImportError("TensorFlow is required to perform hyperparameter tuning.")
 
     configs = [
         {
